@@ -105,7 +105,9 @@
     overflow:hidden;
   }
   h1,h2,h3{text-wrap:balance; margin:0;}
-  button{font:inherit; color:inherit;}
+  button{font:inherit; color:inherit; cursor:pointer;}
+  button:disabled{cursor:default;}
+  [role="button"]{cursor:pointer;}
   a{color:inherit;}
   :focus-visible{outline:none; box-shadow:var(--focus-ring); border-radius:8px;}
   .num{font-variant-numeric:tabular-nums;}
@@ -133,16 +135,16 @@
   }
   .brand-name{font-size:15.5px; font-weight:700; letter-spacing:-0.02em;}
 
-  .side-label{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-tertiary); padding:16px 12px 6px; }
+  .side-label{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-secondary); padding:16px 12px 6px; }
   .side-item{ display:flex; align-items:center; gap:9px; padding:7px 10px; border-radius:8px; cursor:pointer; user-select:none; color:var(--ink-secondary); font-weight:500; }
   .side-item:hover{background:rgba(128,128,128,0.12);}
   .side-item.active{background:var(--accent); color:var(--accent-ink);}
   .side-item.active svg{color:var(--accent-ink);}
   .side-item svg{width:16px; height:16px; color:var(--ink-secondary);}
   .side-item.active .side-count{color:rgba(255,255,255,0.85);}
-  .side-count{margin-left:auto; font-size:11.5px; color:var(--ink-tertiary);}
+  .side-count{margin-left:auto; font-size:11.5px; color:var(--ink-secondary);}
   .side-dot{width:9px; height:9px; border-radius:50%; flex-shrink:0;}
-  .sidebar-footer{margin-top:auto; padding:10px; font-size:11.5px; color:var(--ink-tertiary); border-top:1px solid var(--border); margin-left:2px; margin-right:2px;}
+  .sidebar-footer{margin-top:auto; padding:10px; font-size:11.5px; color:var(--ink-secondary); border-top:1px solid var(--border); margin-left:2px; margin-right:2px;}
 
   .main{display:flex; flex-direction:column; min-width:0; height:100vh; height:100dvh;}
   .toolbar{
@@ -159,7 +161,7 @@
   .search-field:focus-within{background:var(--surface); border-color:var(--border-strong); box-shadow:var(--focus-ring);}
   .search-field svg{width:15px;height:15px;}
   .search-field input{border:0; background:transparent; outline:none; color:var(--ink); width:100%; font-size:13.5px;}
-  .kbd{font-size:10.5px; padding:1px 5px; border-radius:5px; background:rgba(128,128,128,0.18); color:var(--ink-tertiary); font-family:inherit;}
+  .kbd{font-size:10.5px; padding:1px 5px; border-radius:5px; background:rgba(128,128,128,0.18); color:var(--ink-secondary); font-family:inherit;}
 
   .segmented{display:flex; background:rgba(128,128,128,0.14); border-radius:9px; padding:2px; gap:2px;}
   .segmented button{ border:0; background:transparent; padding:5px 9px; border-radius:7px; cursor:pointer; color:var(--ink-secondary); display:flex; align-items:center; }
@@ -181,7 +183,7 @@
   .bell-dot{position:absolute; top:5px; right:5px; width:7px; height:7px; border-radius:50%; background:var(--danger); border:1.5px solid var(--bg-elevated);}
 
   .content{flex:1; overflow-y:auto; padding:24px 30px 90px;}
-  .crumbs{display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink-tertiary); margin-bottom:10px;}
+  .crumbs{display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink-secondary); margin-bottom:10px;}
   .content-head{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:6px;}
   .content-title{display:flex; align-items:center; gap:11px;}
   .content-title h1{font-size:26px; font-weight:800; letter-spacing:-0.02em;}
@@ -190,7 +192,7 @@
   .subject-glyph svg{width:20px; height:20px; color:#fff;}
 
   .section-title{
-    font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-tertiary);
+    font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-secondary);
     display:flex; align-items:center; gap:8px; margin:28px 0 12px;
   }
   .section-title:first-child{margin-top:0;}
@@ -245,7 +247,7 @@
   .star-btn.active{color:var(--warning);}
   .star-btn svg{width:17px; height:17px;}
   .card-title{font-size:13px; font-weight:600; margin-top:10px; letter-spacing:-0.005em; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
-  .card-meta{display:flex; align-items:center; gap:6px; margin-top:6px; font-size:11.5px; color:var(--ink-tertiary);}
+  .card-meta{display:flex; align-items:center; gap:6px; margin-top:6px; font-size:11.5px; color:var(--ink-secondary);}
   .chips{display:flex; flex-wrap:wrap; gap:5px; margin-top:9px;}
   .chip{font-size:10.5px; font-weight:600; padding:2.5px 7px; border-radius:99px; background:rgba(128,128,128,0.14); color:var(--ink-secondary);}
   .chip.due{background:var(--warning-bg); color:var(--warning-ink);}
@@ -262,8 +264,8 @@
   .row .doc-icon svg{width:24px; height:29px;}
   .row .r-title{font-size:13px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
   .row .r-chips{display:flex; gap:5px; overflow:hidden;}
-  .row .r-size{font-size:12px; color:var(--ink-tertiary); text-align:right;}
-  .row .r-date{font-size:12px; color:var(--ink-tertiary); text-align:right;}
+  .row .r-size{font-size:12px; color:var(--ink-secondary); text-align:right;}
+  .row .r-date{font-size:12px; color:var(--ink-secondary); text-align:right;}
   .row .ms-check{position:static;}
   @media (max-width:1040px){ .row{grid-template-columns:26px 32px 1fr 90px 28px;} .row .r-chips, .row .r-date{display:none;} }
 
@@ -282,10 +284,10 @@
   .insp-progress-row{display:flex; align-items:center; gap:12px; background:var(--surface-2); border:1px solid var(--border); border-radius:12px; padding:12px;}
   .insp-progress-text{flex:1;}
   .insp-progress-text .label{font-size:12.5px; font-weight:600;}
-  .insp-progress-text .sub{font-size:11.5px; color:var(--ink-tertiary); margin-top:2px;}
+  .insp-progress-text .sub{font-size:11.5px; color:var(--ink-secondary); margin-top:2px;}
   .kv-list{display:flex; flex-direction:column; border-top:1px solid var(--border);}
   .kv-row{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--border); font-size:12.5px;}
-  .kv-row .k{color:var(--ink-tertiary);}
+  .kv-row .k{color:var(--ink-secondary);}
   .kv-row .v{font-weight:500; text-align:right;}
   .insp-desc{font-size:12.5px; color:var(--ink-secondary); line-height:1.55;}
 
@@ -305,9 +307,9 @@
   .palette-item .doc-icon{width:24px; height:29px;}
   .palette-item .doc-icon svg{width:24px; height:29px;}
   .palette-item-title{font-size:13px; font-weight:600; flex:1;}
-  .palette-item-sub{font-size:11.5px; color:var(--ink-tertiary);}
-  .palette-empty{padding:30px; text-align:center; color:var(--ink-tertiary); font-size:13px;}
-  .palette-footer{display:flex; gap:14px; padding:9px 16px; border-top:1px solid var(--border); font-size:11px; color:var(--ink-tertiary);}
+  .palette-item-sub{font-size:11.5px; color:var(--ink-secondary);}
+  .palette-empty{padding:30px; text-align:center; color:var(--ink-secondary); font-size:13px;}
+  .palette-footer{display:flex; gap:14px; padding:9px 16px; border-top:1px solid var(--border); font-size:11px; color:var(--ink-secondary);}
   .palette-footer span{display:flex; align-items:center; gap:5px;}
 
   .ql-card{ width:min(760px,88vw); background:var(--surface); border-radius:18px; box-shadow:var(--shadow-lg); border:1px solid var(--border); display:flex; flex-direction:column; overflow:hidden; transform:scale(.97); transition:transform .2s ease; }
@@ -322,7 +324,7 @@
   .ql-nav.prev{left:16px;} .ql-nav.next{right:16px;}
   .ql-placeholder{width:280px; background:#fff; border-radius:4px; box-shadow:0 12px 30px rgba(0,0,0,0.18); padding:26px 22px; color:#1d1d1f;}
   .ql-placeholder .pline{height:8px; background:#e6e6ea; border-radius:4px; margin-bottom:9px;}
-  .ql-foot{display:flex; justify-content:space-between; align-items:center; padding:10px 16px; border-top:1px solid var(--border); font-size:11.5px; color:var(--ink-tertiary);}
+  .ql-foot{display:flex; justify-content:space-between; align-items:center; padding:10px 16px; border-top:1px solid var(--border); font-size:11.5px; color:var(--ink-secondary);}
   .ql-foot .tool-btn{padding:5px 10px; font-size:12px;}
 
   .upl-card{width:460px; max-width:88vw; background:var(--surface); border-radius:16px; box-shadow:var(--shadow-lg); border:1px solid var(--border); padding:20px;}
@@ -346,13 +348,13 @@
   .bell-pop, .theme-pop{ position:absolute; top:calc(100% + 8px); right:0; width:300px; background:var(--surface); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow-lg); padding:6px; opacity:0; transform:translateY(-6px) scale(.98); pointer-events:none; transition:opacity .15s ease, transform .15s ease; z-index:30; }
   .bell-pop.open, .theme-pop.open{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
   .theme-pop{width:170px;}
-  .pop-title{font-size:12px; font-weight:700; padding:8px 10px 4px; color:var(--ink-tertiary); text-transform:uppercase; letter-spacing:.05em;}
+  .pop-title{font-size:12px; font-weight:700; padding:8px 10px 4px; color:var(--ink-secondary); text-transform:uppercase; letter-spacing:.05em;}
   .notif-row{display:flex; gap:10px; padding:9px 10px; border-radius:9px;}
   .notif-row:hover{background:rgba(128,128,128,0.10);}
   .notif-dot{width:8px; height:8px; border-radius:50%; background:var(--accent); margin-top:5px; flex-shrink:0;}
   .notif-row .body{flex:1;}
   .notif-row .t{font-size:12.5px; font-weight:600;}
-  .notif-row .d{font-size:11.5px; color:var(--ink-tertiary); margin-top:2px;}
+  .notif-row .d{font-size:11.5px; color:var(--ink-secondary); margin-top:2px;}
   .theme-opt{display:flex; align-items:center; gap:9px; padding:8px 10px; border-radius:9px; cursor:pointer; font-size:13px;}
   .theme-opt:hover{background:rgba(128,128,128,0.10);}
   .theme-opt svg{width:16px;height:16px; color:var(--ink-secondary);}
@@ -363,9 +365,9 @@
   .toast{ position:fixed; bottom:26px; left:50%; transform:translate(-50%,20px); background:var(--ink); color:var(--bg); padding:9px 16px; border-radius:11px; font-size:13px; font-weight:500; box-shadow:var(--shadow-lg); opacity:0; pointer-events:none; transition:opacity .18s ease, transform .18s ease; z-index:60; }
   .toast.open{opacity:1; transform:translate(-50%,0);}
 
-  .empty-state{display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 20px; color:var(--ink-tertiary); text-align:center; gap:10px;}
+  .empty-state{display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 20px; color:var(--ink-secondary); text-align:center; gap:10px;}
   .empty-state svg{width:44px;height:44px; opacity:.5;}
-  .trash-note{font-size:12px; color:var(--ink-tertiary); background:rgba(128,128,128,0.10); border-radius:10px; padding:10px 14px; margin-bottom:16px;}
+  .trash-note{font-size:12px; color:var(--ink-secondary); background:rgba(128,128,128,0.10); border-radius:10px; padding:10px 14px; margin-bottom:16px;}
 
   @media (max-width:760px){
     .app, .app.inspector-open{ grid-template-columns:1fr; }
@@ -413,17 +415,17 @@
       <div class="brand-name">Lernraum</div>
     </div>
 
-    <div class="side-item" data-view="home"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11.5 12 4l8 7.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v8.5a1.5 1.5 0 0 0 1.5 1.5h9a1.5 1.5 0 0 0 1.5-1.5V10" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>Übersicht</span></div>
-    <div class="side-item" data-view="all"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="3" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="13" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="13" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/></svg><span>Alle Materialien</span><span class="side-count" id="cnt-all"></span></div>
-    <div class="side-item" data-view="recent"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Zuletzt geöffnet</span></div>
-    <div class="side-item" data-view="fav"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4l2.3 5.3 5.7.5-4.3 3.8 1.3 5.6L12 16.2 6.9 19.2l1.3-5.6L4 9.8l5.7-.5L12 4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Favoriten</span></div>
-    <div class="side-item" data-view="due"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9h17M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Fällig</span><span class="side-count" id="cnt-due"></span></div>
+    <div class="side-item" role="button" tabindex="0" data-view="home"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11.5 12 4l8 7.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v8.5a1.5 1.5 0 0 0 1.5 1.5h9a1.5 1.5 0 0 0 1.5-1.5V10" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>Übersicht</span></div>
+    <div class="side-item" role="button" tabindex="0" data-view="all"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="3" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="13" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="13" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/></svg><span>Alle Materialien</span><span class="side-count" id="cnt-all"></span></div>
+    <div class="side-item" role="button" tabindex="0" data-view="recent"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Zuletzt geöffnet</span></div>
+    <div class="side-item" role="button" tabindex="0" data-view="fav"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4l2.3 5.3 5.7.5-4.3 3.8 1.3 5.6L12 16.2 6.9 19.2l1.3-5.6L4 9.8l5.7-.5L12 4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Favoriten</span></div>
+    <div class="side-item" role="button" tabindex="0" data-view="due"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9h17M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Fällig</span><span class="side-count" id="cnt-due"></span></div>
 
     <div class="side-label">Fächer</div>
     <div id="subjectList"></div>
 
     <div class="side-label">Verwaltung</div>
-    <div class="side-item" data-view="trash"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M6 7l1 12.5A2 2 0 0 0 9 21.3h6a2 2 0 0 0 2-1.8L18 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Papierkorb</span></div>
+    <div class="side-item" role="button" tabindex="0" data-view="trash"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M6 7l1 12.5A2 2 0 0 0 9 21.3h6a2 2 0 0 0 2-1.8L18 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Papierkorb</span></div>
 
     <div class="sidebar-footer">Physik 6J &middot; 5 Materialien synchronisiert</div>
   </aside>
@@ -476,9 +478,9 @@
           <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17V3.5Z" fill="currentColor"/></svg>
         </button>
         <div class="theme-pop" id="themePop">
-          <div class="theme-opt" data-theme="auto"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17" fill="currentColor"/></svg>Automatisch<svg class="check" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="theme-opt" data-theme="light"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.7"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Hell<svg class="check" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="theme-opt" data-theme="dark"><svg viewBox="0 0 24 24" fill="none"><path d="M20 13.5A8.5 8.5 0 1 1 10.5 4a6.8 6.8 0 0 0 9.5 9.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Dunkel<svg class="check" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="theme-opt" role="button" tabindex="0" data-theme="auto"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17" fill="currentColor"/></svg>Automatisch<svg class="check" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="theme-opt" role="button" tabindex="0" data-theme="light"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.7"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Hell<svg class="check" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="theme-opt" role="button" tabindex="0" data-theme="dark"><svg viewBox="0 0 24 24" fill="none"><path d="M20 13.5A8.5 8.5 0 1 1 10.5 4a6.8 6.8 0 0 0 9.5 9.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Dunkel<svg class="check" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </div>
       </div>
     </div>
@@ -528,7 +530,7 @@
   <div class="upl-card">
     <div class="upl-head">
       <h3>Material hochladen</h3>
-      <button class="ql-close" id="uploadClose">
+      <button class="ql-close" id="uploadClose" aria-label="Schließen">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
@@ -679,7 +681,7 @@
     host.innerHTML = SUBJECTS.map(function(s){
       var count = ITEMS.filter(function(i){return i.subject===s.id;}).length;
       var active = state.view==="subject:"+s.id;
-      return '<div class="side-item'+(active?' active':'')+'" data-view="subject:'+s.id+'">'+
+      return '<div class="side-item'+(active?' active':'')+'" role="button" tabindex="0" data-view="subject:'+s.id+'">'+
         '<span class="side-dot" style="background:'+s.color+'"></span><span>'+s.name+'</span>'+
         '<span class="side-count">'+count+'</span></div>';
     }).join("");
@@ -711,6 +713,14 @@
   document.getElementById("hamburgerBtn").addEventListener("click", openSidebarDrawer);
   document.getElementById("sidebarBackdrop").addEventListener("click", closeSidebarDrawer);
 
+  document.addEventListener("keydown", function(e){
+    if(e.key!=="Enter" && e.key!==" ") return;
+    var target = e.target.closest('[role="button"]');
+    if(!target) return;
+    e.preventDefault();
+    target.click();
+  });
+
   function cardHtml(it){
     var subj = subjectOf(it.subject);
     var color = subj.color;
@@ -718,7 +728,7 @@
     var chipsHtml = it.tags.map(function(t){return '<span class="chip">'+t+'</span>';}).join("");
     if(it.due) chipsHtml += '<span class="chip due">'+dueLabel(it.due)+'</span>';
     var checkbox = state.selectMode ? '<input type="checkbox" class="ms-check" data-id="'+it.id+'" '+(state.multiSelected[it.id]?'checked':'')+'>' : "";
-    return '<div class="card'+sel+'" data-id="'+it.id+'">'+
+    return '<div class="card'+sel+'" role="button" tabindex="0" aria-label="'+it.title+'" data-id="'+it.id+'">'+
       checkbox+
       '<div class="card-top"><div class="doc-icon">'+docIconSvg(color, it.progress>=100)+'</div>'+
       '<button class="star-btn'+(it.fav?' active':'')+'" data-fav="'+it.id+'" aria-label="Favorit">'+
@@ -735,7 +745,7 @@
     var sel = state.selected===it.id ? " selected" : "";
     var chipsHtml = it.tags.slice(0,2).map(function(t){return '<span class="chip">'+t+'</span>';}).join("");
     var checkbox = state.selectMode ? '<input type="checkbox" class="ms-check" data-id="'+it.id+'" '+(state.multiSelected[it.id]?'checked':'')+'>' : '<span></span>';
-    return '<div class="row'+sel+'" data-id="'+it.id+'">'+
+    return '<div class="row'+sel+'" role="button" tabindex="0" aria-label="'+it.title+'" data-id="'+it.id+'">'+
       checkbox+
       '<div class="doc-icon">'+docIconSvg(subj.color, it.progress>=100)+'</div>'+
       '<div class="r-title">'+it.title+'</div>'+
@@ -854,23 +864,23 @@
       '</div>';
 
     if(dueSoon.length){
-      html += '<div class="section-title">Als Nächstes fällig</div>';
+      html += '<h2 class="section-title">Als Nächstes fällig</h2>';
       html += dueSoon.slice(0,3).map(function(it){
         var subj = subjectOf(it.subject);
-        return '<div class="due-strip" data-id="'+it.id+'"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9h17M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>'+
+        return '<div class="due-strip" role="button" tabindex="0" aria-label="'+it.title+', '+dueLabel(it.due)+'" data-id="'+it.id+'"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9h17M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>'+
           '<span class="t">'+it.title+' &middot; '+subj.name+'</span><span class="d">'+dueLabel(it.due)+'</span></div>';
       }).join("");
     }
 
     if(recent.length){
-      html += '<div class="section-head-row"><div class="section-title">Zuletzt geöffnet</div><button class="see-all" data-goto="recent">Alle anzeigen</button></div>';
+      html += '<div class="section-head-row"><h2 class="section-title">Zuletzt geöffnet</h2><button class="see-all" data-goto="recent">Alle anzeigen</button></div>';
       html += '<div class="hscroll">'+recent.map(cardHtml).join("")+'</div>';
     }
 
-    html += '<div class="section-title">Fächer</div>';
+    html += '<h2 class="section-title">Fächer</h2>';
     html += '<div class="subject-tile-grid">'+SUBJECTS.map(function(s){
       var count = ITEMS.filter(function(i){return i.subject===s.id;}).length;
-      return '<div class="subject-tile" data-goto="subject:'+s.id+'" style="background:linear-gradient(135deg,'+s.color+',color-mix(in srgb,'+s.color+' 55%, black));">'+
+      return '<div class="subject-tile" role="button" tabindex="0" aria-label="'+s.name+' öffnen" data-goto="subject:'+s.id+'" style="background:linear-gradient(135deg,'+s.color+',color-mix(in srgb,'+s.color+' 55%, black));">'+
         '<div class="st-glow"></div>'+
         '<svg viewBox="0 0 24 24" fill="none">'+subjectIcon(s.icon)+'</svg>'+
         '<div><div class="st-name">'+s.name+'</div><div class="st-count">'+count+' Materialien</div></div>'+
@@ -938,7 +948,7 @@
       SUBJECTS.forEach(function(s){
         var group = items.filter(function(i){return i.subject===s.id;});
         if(group.length===0) return;
-        html += '<div class="section-title"><span class="side-dot" style="background:'+s.color+'"></span>'+s.name+'</div>';
+        html += '<h2 class="section-title"><span class="side-dot" style="background:'+s.color+'"></span>'+s.name+'</h2>';
         html += isList ? '<div class="rows">'+group.map(rowHtml).join("")+'</div>' : '<div class="grid">'+group.map(cardHtml).join("")+'</div>';
       });
       host.innerHTML = html;
@@ -956,7 +966,7 @@
     var insp = document.getElementById("inspector");
     insp.innerHTML =
       '<div style="position:relative;">'+
-      '<button class="insp-close" id="inspClose"><svg viewBox="0 0 24 24" width="13" height="13" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>'+
+      '<button class="insp-close" id="inspClose" aria-label="Details schließen"><svg viewBox="0 0 24 24" width="13" height="13" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>'+
       '<div class="insp-preview"><div class="doc-icon">'+docIconSvg(subj.color, it.progress>=100)+'</div></div>'+
       '</div>'+
       '<div class="insp-body">'+
@@ -1025,7 +1035,7 @@
     card.innerHTML =
       '<div class="ql-head"><div class="doc-icon">'+docIconSvg(subj.color,it.progress>=100)+'</div>'+
       '<div class="ql-head-title">'+it.title+'</div>'+
-      '<button class="ql-close" id="qlClose"><svg viewBox="0 0 24 24" width="13" height="13" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>'+
+      '<button class="ql-close" id="qlClose" aria-label="Vorschau schließen"><svg viewBox="0 0 24 24" width="13" height="13" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>'+
       '<div class="ql-body">'+
       (qlIds.length>1 ? '<button class="ql-nav prev" id="qlPrev"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : "")+
       '<div class="ql-placeholder">'+
@@ -1105,7 +1115,7 @@
     if(list.length===0){ host.innerHTML = '<div class="palette-empty">Keine Treffer</div>'; return; }
     host.innerHTML = list.map(function(it,idx){
       var subj = subjectOf(it.subject);
-      return '<div class="palette-item'+(idx===0?" active":"")+'" data-id="'+it.id+'"><div class="doc-icon">'+docIconSvg(subj.color,it.progress>=100)+'</div>'+
+      return '<div class="palette-item'+(idx===0?" active":"")+'" role="button" tabindex="0" data-id="'+it.id+'"><div class="doc-icon">'+docIconSvg(subj.color,it.progress>=100)+'</div>'+
         '<div class="palette-item-title">'+it.title+'</div><div class="palette-item-sub">'+subj.name+'</div></div>';
     }).join("");
     host.querySelectorAll(".palette-item").forEach(function(el){
