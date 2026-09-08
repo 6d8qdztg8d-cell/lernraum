@@ -487,6 +487,7 @@
       <div class="crumbs" id="crumbs"></div>
       <div class="content-head">
         <div class="content-title" id="contentTitleWrap">
+          <div id="contentGlyph"></div>
           <h1 id="contentTitle">Übersicht</h1>
         </div>
         <div class="sort-select">
@@ -805,7 +806,7 @@
     var titleEl = document.getElementById("contentTitle");
     var subEl = document.getElementById("contentSub");
     var crumbs = document.getElementById("crumbs");
-    var wrap = document.getElementById("contentTitleWrap");
+    var glyphHost = document.getElementById("contentGlyph");
     var glyph = "";
     var title = "Übersicht", sub = "", crumbTxt = "Lernraum";
     var showSort = true, showSearch = true, showViewToggle = true, showSelect = true;
@@ -824,7 +825,7 @@
       glyph = '<div class="subject-glyph" style="background:'+s.color+'"><svg viewBox="0 0 24 24" fill="none">'+subjectIcon(s.icon)+'</svg></div>';
     }
     titleEl.textContent = title;
-    wrap.innerHTML = glyph + '<h1>'+title+'</h1>';
+    glyphHost.innerHTML = glyph;
     subEl.textContent = sub;
     crumbs.innerHTML = crumbTxt;
     document.getElementById("sortBtn").style.display = showSort ? "flex" : "none";
