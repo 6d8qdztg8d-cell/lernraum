@@ -1,0 +1,38 @@
+"use client";
+
+import { cn } from "@/lib/cn";
+
+export function Switch({
+  checked,
+  onChange,
+  label,
+  disabled,
+}: {
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  label: string;
+  disabled?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={checked}
+      aria-label={label}
+      disabled={disabled}
+      onClick={() => onChange(!checked)}
+      className={cn(
+        "relative h-[26px] w-[44px] shrink-0 rounded-full transition-colors duration-150",
+        checked ? "bg-[var(--success)]" : "bg-black/[0.14]",
+        disabled && "opacity-40"
+      )}
+    >
+      <span
+        className={cn(
+          "absolute top-[2px] size-[22px] rounded-full bg-white shadow-[0_1px_3px_rgba(0,0,0,0.25)] transition-transform duration-150",
+          checked ? "translate-x-[20px]" : "translate-x-[2px]"
+        )}
+      />
+    </button>
+  );
+}
