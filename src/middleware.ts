@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 const SITE_USER = "lernraum";
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const sitePassword = process.env.SITE_PASSWORD;
   if (!sitePassword) return NextResponse.next();
 
