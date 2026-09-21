@@ -36,8 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
-# school material source files (not for public repo)
+# school material source files (not for public repo) —
+# but the cleaned copies served by the app are allowed through
 *.pdf
+!public/materials/**/*.pdf
 
 # typescript
 *.tsbuildinfo
